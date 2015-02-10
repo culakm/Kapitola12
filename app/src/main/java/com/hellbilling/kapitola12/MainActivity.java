@@ -27,8 +27,7 @@ public class MainActivity extends ListActivity {
         selection=(TextView)findViewById(R.id.selection);
     }
 
-    public void onListItemClick(ListView parent, View v, int position,
-                                long id) {
+    public void onListItemClick(ListView parent, View v, int position, long id) {
         selection.setText(items[position]);
     }
 }
