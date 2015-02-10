@@ -21,6 +21,7 @@ public class MainActivity extends ListActivity {
                 android.R.layout.simple_list_item_1,
                 items));
         selection=(TextView)findViewById(R.id.selection);
+
     }
 
     public void onListItemClick(ListView parent, View v, int position, long id) {

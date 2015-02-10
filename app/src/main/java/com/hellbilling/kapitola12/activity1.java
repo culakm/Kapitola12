@@ -1,39 +1,42 @@
 package com.hellbilling.kapitola12;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.ListActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 
-public class activity1 extends ActionBarActivity {
+public class activity1 extends ListActivity {
+    private static final String[] items={"lorem", "ipsum", "dolor",
+            "sit", "amet",
+            "consectetuer", "adipiscing", "elit", "morbi", "vel",
+            "ligula", "vitae", "arcu", "aliquet", "mollis",
+            "etiam", "vel", "erat", "placerat", "ante",
+            "porttitor", "sodales", "pellentesque", "augue", "purus"};
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
         setContentView(R.layout.activity_activity1);
-    }
+        setListAdapter(new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_multiple_choice,
+                items));
 
+        // nastavenie checknutych poloziek
+        // asi preto ze tu je extends ListActivity tak nam getListView vrati ten ListView ktory je v xml definovany ako list
+        final ListView pako = getListView();
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_activity1, menu);
-        return true;
-    }
+        int size = 5;
+        for (int i = 0; i <= size; i++) {
+            switch(i) {
+                case 2:
+                    pako.setItemChecked(i, true);
+                    break;
+                case 5:
+                    pako.setItemChecked(i, true);
+                    break;
+            }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
         }
-
-        return super.onOptionsItemSelected(item);
     }
 }
