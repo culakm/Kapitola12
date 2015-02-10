@@ -1,6 +1,7 @@
 package com.hellbilling.kapitola12;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -10,12 +11,7 @@ import android.widget.TextView;
 
 public class MainActivity extends ListActivity {
     private TextView selection;
-    private static final String[] items={"lorem", "ipsum", "dolor",
-            "sit", "amet",
-            "consectetuer", "adipiscing", "elit", "morbi", "vel",
-            "ligula", "vitae", "arcu", "aliquet", "mollis",
-            "etiam", "vel", "erat", "placerat", "ante",
-            "porttitor", "sodales", "pellentesque", "augue", "purus"};
+    private static final String[] items={"act 1","act 2","act3"};
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -29,5 +25,13 @@ public class MainActivity extends ListActivity {
 
     public void onListItemClick(ListView parent, View v, int position, long id) {
         selection.setText(items[position]);
+
+        Intent intent;
+        switch(position) {
+            case 0:
+                intent = new Intent(this, activity1.class);
+                startActivity(intent);
+                break;
+        }
     }
 }
