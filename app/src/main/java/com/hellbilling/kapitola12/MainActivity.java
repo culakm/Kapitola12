@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class MainActivity extends ListActivity {
     private TextView selection;
-    private static final String[] items={"act 1","act 2","act3"};
+    private static final String[] items={"multipleChoice","act 2","act3"};
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -33,6 +33,20 @@ public class MainActivity extends ListActivity {
                 intent = new Intent(this, activity1.class);
                 startActivity(intent);
                 break;
+            case 1:
+                intent = new Intent(this, activity2.class);
+                startActivity(intent);
+                break;
         }
+
+//        ActivityInfo[] list = getPackageManager().getPackageInfo(getPackageName()).activities;
+//        int countActivities = 2;
+//        for (int i = 0; i < countActivities; i++) {
+//            if (i == position) {
+//                String activityName = "activity" + i;
+//                intent = new Intent(this, activityName.class);
+//                startActivity(intent);
+//            }
+//        }
     }
 }
