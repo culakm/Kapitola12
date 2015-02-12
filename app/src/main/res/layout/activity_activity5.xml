@@ -10,9 +10,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         />
-    <Spinner android:id="@+id/spinner"
+    <AutoCompleteTextView android:id="@+id/edit"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:drawSelectorOnTop="true"
-        />
+        android:completionThreshold="3"/>
 </LinearLayout>

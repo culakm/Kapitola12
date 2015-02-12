@@ -7,12 +7,19 @@
     >
     <TextView
         android:id="@+id/selection"
+        android:text="ja som selection"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         />
-    <Spinner android:id="@+id/spinner"
+    <GridView
+        android:id="@+id/grid"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:drawSelectorOnTop="true"
+        android:layout_height="fill_parent"
+        android:verticalSpacing="40dip"
+        android:horizontalSpacing="5dip"
+        android:numColumns="auto_fit"
+        android:columnWidth="100dip"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
         />
 </LinearLayout>

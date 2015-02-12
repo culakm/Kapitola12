@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class MainActivity extends ListActivity {
     private TextView selection;
-    private static final String[] items={"multipleChoice","act 2","act3"};
+    private static final String[] items={"multipleChoice","spinner","GridView kniha","grid view alternativa","AutoCompleteTextView","zoznam ikona","zoznam ikona dynamic tu dorobit poznamky podla BA"};
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -35,6 +35,26 @@ public class MainActivity extends ListActivity {
                 break;
             case 1:
                 intent = new Intent(this, activity2.class);
+                startActivity(intent);
+                break;
+            case 2:
+                intent = new Intent(this, activity3.class);
+                startActivity(intent);
+                break;
+            case 3:
+                intent = new Intent(this, activity4.class);
+                startActivity(intent);
+                break;
+            case 4:
+                intent = new Intent(this, activity5.class);
+                startActivity(intent);
+                break;
+            case 5:
+                intent = new Intent(this, activity6.class);
+                startActivity(intent);
+                break;
+            case 6:
+                intent = new Intent(this, activity7.class);
                 startActivity(intent);
                 break;
         }
