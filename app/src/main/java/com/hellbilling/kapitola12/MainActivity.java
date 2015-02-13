@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class MainActivity extends ListActivity {
     private TextView selection;
-    private static final String[] items={"multipleChoice","spinner","GridView kniha","grid view alternativa","AutoCompleteTextView","zoznam ikona","zoznam ikona dynamic tu dorobit poznamky podla BA"};
+    private static final String[] items={"multipleChoice","spinner","GridView kniha","grid view alternativa","AutoCompleteTextView","zoznam ikona","zoznam ikona dynamic tu dorobit poznamky podla BA, treba pridat row.xml"};
 
     @Override
     public void onCreate(Bundle icicle) {

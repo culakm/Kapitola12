@@ -34,7 +34,7 @@ public class activity7 extends ListActivity {
 
     class IconicAdapter extends ArrayAdapter<String> {
         IconicAdapter() {
-            super(activity7.this, R.layout.row, R.id.label, items);
+            super(activity7.this, R.layout.row_ba, R.id.label, items);
         }
 
         public View getView(int position, View convertView,
