@@ -2,6 +2,7 @@ package com.hellbilling.kapitola12;
 
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -10,7 +11,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 
-public class activity7 extends ListActivity {
+public class activity8 extends ListActivity {
     TextView selection;
     private static final String[] items={"lorem", "ipsum", "dolor",
             "sit", "amet",
@@ -22,7 +23,7 @@ public class activity7 extends ListActivity {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        setContentView(R.layout.activity_activity6); // nepotrebuje activity_activity7 pouziva 6
+        setContentView(R.layout.activity_activity8);
         setListAdapter(new IconicAdapter());
         selection=(TextView)findViewById(R.id.selection);
     }
@@ -34,12 +35,17 @@ public class activity7 extends ListActivity {
 
     class IconicAdapter extends ArrayAdapter<String> {
         IconicAdapter() {
-            super(activity7.this, R.layout.row_ba, R.id.label, items);
+            super(activity8.this, R.layout.row, items);
         }
 
         public View getView(int position, View convertView,
                             ViewGroup parent) {
-            View row=super.getView(position, convertView, parent);
+            LayoutInflater inflater=getLayoutInflater();
+            View row=inflater.inflate(R.layout.row, parent, false);
+            TextView label=(TextView)row.findViewById(R.id.label);
+
+            label.setText(items[position]);
+
             ImageView icon=(ImageView)row.findViewById(R.id.icon);
 
             if (items[position].length()>4) {
